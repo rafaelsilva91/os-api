@@ -3,6 +3,8 @@ package com.project.os.model.entities.dtos;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.project.os.model.entities.Os;
+import com.project.os.model.entities.enums.Prioridade;
+import com.project.os.model.entities.enums.Status;
 
 import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
@@ -68,16 +70,18 @@ public class OsDTO implements Serializable {
         this.dataFechamento = dataFechamento;
     }
 
-    public Integer getPrioridade() {
-        return prioridade;
+    public Prioridade getPrioridade() {
+
+        return Prioridade.toEnum(this.prioridade);
     }
 
     public void setPrioridade(Integer prioridade) {
         this.prioridade = prioridade;
     }
 
-    public Integer getStatus() {
-        return status;
+    public Status getStatus() {
+
+        return Status.toEnum(this.status);
     }
 
     public void setStatus(Integer status) {
